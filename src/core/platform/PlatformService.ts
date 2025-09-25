@@ -15,7 +15,10 @@ export class PlatformService {
 
 	protected init() {
 		this.app = Services.get(Application);
-		console.info(`${JSON.stringify(import.meta.env, undefined, '   ')}`);
+
+		if (import.meta.env.DEV) {
+			console.info(`${JSON.stringify(import.meta.env, undefined, '   ')}`);
+		}
 	}
 
 	protected onResize(w: number, h: number) {
